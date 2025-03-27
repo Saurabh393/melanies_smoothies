@@ -49,8 +49,8 @@ if Ingredient_List :
 st.write("You've chosen : " + Ingredient_string)
 st.write("*Please check the selected ingredients and then submit your order*.")
 
-        my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
-            values ('""" + Ingredient_string + """', '""" + name_on_order + """')"""
+my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
+         values ('""" + Ingredient_string + """', '""" + name_on_order + """')"""
 
 #st.write(my_insert_stmt)
 #st.stop()
