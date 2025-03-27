@@ -21,12 +21,12 @@ Ingredient_List = st.multiselect("Chosse upto 5 ingredient"
                                 , my_dataframe
                                 , max_selections=6)
 
+Ingredient_string = ''
 
 if Ingredient_List :
     #st.write(Ingredient_List)
     #st.text(Ingredient_List)
 
-    Ingredient_string = ''
 
     for Fruit_chosen in Ingredient_List:
         Ingredient_string += (Fruit_chosen + ' ')
