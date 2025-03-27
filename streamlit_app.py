@@ -22,9 +22,9 @@ Ingredient_List = st.multiselect("Chosse upto 5 ingredient"
                                 , my_dataframe
                                 , max_selections=6)
 
+Ingredient_string = ''
 
 if Ingredient_List :
-    Ingredient_string = ''
     #st.write(Ingredient_List)
     #st.text(Ingredient_List)
 
