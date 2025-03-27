@@ -16,7 +16,12 @@ st.write("The name on the cup of smoothie will be :", name_on_order)
 cnx = st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
-st.dataframe(data=my_dataframe, use_container_width=True)
+#st.dataframe(data=my_dataframe, use_container_width=True)
+#st.stop()
+
+#Convert snowpark dataframe to Pandas, so we can use LOC function
+pd_df=my_dataframe.to_pandas()
+st.dataframe(pd_df)
 st.stop()
 
 Ingredient_List = st.multiselect("Chosse upto 5 ingredient"
