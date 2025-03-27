@@ -29,11 +29,12 @@ Ingredient_List = st.multiselect("Chosse upto 5 ingredient"
                                 , max_selections=6)
 
 
+Ingredient_string = ''
 
 if Ingredient_List :
     #st.write(Ingredient_List)
     #st.text(Ingredient_List)
-    Ingredient_string = ''
+    
 
     for Fruit_chosen in Ingredient_List:
         Ingredient_string += (Fruit_chosen + ' ')
@@ -42,7 +43,7 @@ if Ingredient_List :
         st.write('The search value for ', Fruit_chosen,' is ', search_on, '.')
 
         st.subheader(Fruit_chosen + ' Nutrition Information')
-        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + Fruit_chosen)
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on)
         sf_df = st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
 
 
